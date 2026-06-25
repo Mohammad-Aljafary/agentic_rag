@@ -7,3 +7,8 @@ __pycache__/
 *.pyo
 *.pyd
 *.log
+.pytest_cache/
+
+*.agents
+*.codex
+*.db
