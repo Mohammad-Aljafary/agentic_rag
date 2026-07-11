@@ -91,3 +91,27 @@ class QueryResponse(BaseModel):
     citations: list[Citation] = Field(default_factory=list)
     retrieval_trace: RetrievalTrace
     metadata: dict[str, Any] = Field(default_factory=dict)
+
+
+class IngestionRun(BaseModel):
+    """Tracks a single ingestion operation for a source."""
+
+    run_id: str
+    source_id: str
+    status: str
+    chunks_count: int = 0
+    error_message: str | None = None
+    started_at: str | None = None
+    completed_at: str | None = None
+
+
+class AnswerRecord(BaseModel):
+    """A persisted generated answer with its citations and trace."""
+
+    answer_id: str
+    query: str
+    answer_text: str
+    status: str
+    citations: list[Citation] = Field(default_factory=list)
+    retrieval_trace: RetrievalTrace | None = None
+    created_at: str | None = None

@@ -75,8 +75,4 @@ def _stable_chunk_id(source_id: str, chunk_index: int, chunk_text: str) -> str:
     ).hexdigest()
     return f"chunk_{chunk_hash[:16]}"
 
-def add_to_database(chunks: list[DocumentChunk], db_session) -> None:
-    """Add chunks to the database."""
-    for chunk in chunks:
-        db_session.add(chunk)
-    db_session.commit()
+

@@ -9,6 +9,8 @@ dependencies = [
     "pydantic>=2.8.0",
     "tiktoken>=0.13.0",
     "sqlalchemy>=2.0.51",
+    "chromadb>=1.5.9",
+    "sentence-transformers>=5.6.0",
 ]
 
 [project.optional-dependencies]

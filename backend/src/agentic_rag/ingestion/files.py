@@ -57,7 +57,4 @@ def read_local_document(file_path: str | Path) -> tuple[DocumentSource, str]:
     )
     return source, text
 
-def add_source_to_database(source: DocumentSource, db_session) -> None:
-    """Add a document source to the database."""
-    db_session.add(source)
-    db_session.commit()
+
